@@ -1,27 +1,29 @@
-const Estudiante= require('../Modelos/Estudiante')
+const Estudiantes = require('../Modelos/Estudiante');
+
 
 //request, response
-exports.getEstudiante = async (req,resp) =>{
+exports.getEstudiantes = async (req,resp) =>{
 
     try {
 
         //select *from estudiante
-        const estudiantes = await Estudiante.findAll();
+        const estudiantes = await Estudiantes.findAll();
 
         resp.status(200).send(estudiantes)
         
     } catch (error) {
         resp.status(500).send(error)
+        console.log(error)
     }
 
 }
 
-
-exports.postEstudiante = async (req,resp) =>{
+//agregar
+exports.postEstudiantes = async (req,resp) =>{
 
     try {
     
-        const result =await Estudiante.create(req.body);
+        const result =await Estudiantes.create(req.body);
         resp.json(result)
     
       } catch (error) {
@@ -30,10 +32,10 @@ exports.postEstudiante = async (req,resp) =>{
 
 }
 
-exports.putEstudiante = async (req,resp) =>{
+exports.postEstudiantes = async (req,resp) =>{
     try {
     
-        const result =await Estudiante.findByPk(req.params.idestudiantes);
+        const result =await Estudiantes.findByPk(req.params.idestudiante);
     
         if(result){
           await result.update(req.body);
@@ -48,23 +50,25 @@ exports.putEstudiante = async (req,resp) =>{
         resp.status(500).json({error: 'Ocurrio un error' + error})
       }
 }
-exports.deleteEstudiante = async (req,resp) =>{
 
-    try {
+
+// exports.deleteCalzado = async (req,resp) =>{
+
+//     try {
     
-        const result =await Estudiante.findByPk(req.params.idestudiantes);
+//         const result =await Calzado.findByPk(req.params.id_calzado);
     
-        if(result){
-          await result.destroy();
-          resp.status(200).send("Elimado correctamente")
-        }
-        else{
-          resp.status(402).send("No se encontraron registro")
-        }
+//         if(result){
+//           await result.destroy();
+//           resp.status(200).send("Elimado correctamente")
+//         }
+//         else{
+//           resp.status(402).send("No se encontraron registro")
+//         }
        
     
-      } catch (error) {
-        resp.status(500).json({error: 'Ocurrio un error' + error})
-      }
+//       } catch (error) {
+//         resp.status(500).json({error: 'Ocurrio un error' + error})
+//       }
 
-}
+// }

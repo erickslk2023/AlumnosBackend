@@ -4,10 +4,10 @@ const AsignaturaEstudianteController= require('../controller/AsignaturaEstudiant
 
 const router = express.Router();
 
-router.get('/',AsignaturaEstudianteController.getAsignaturaEstudiante)
-router.post('/',AsignaturaEstudianteController.postAsignaturaEstudiante)
-router.put('/:id',AsignaturaEstudianteController.postAsignaturaEstudiante)
-router.delete('/:id',AsignaturaEstudianteController.deleteAsignaturaEstudiante)
+router.get('/', AsignaturaEstudianteController.getAsignaturaEstudiante)
+router.post('/', AsignaturaEstudianteController.postAsignaturaEstudiante)
+router.put('/:id', AsignaturaEstudianteController.putAsignaturaEstudiante)
+router.delete('/:id', AsignaturaEstudianteController.deleteAsignaturaEstudiante)
 
 
 module.exports=router;

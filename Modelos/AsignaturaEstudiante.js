@@ -19,7 +19,7 @@ const AsignaturaEstudiante = sequelize.define('AsignaturaEstudiante', {
     }
 },
     {
-        tableName: 'asignaturaEstudiante',
+        tableName: 'asignaciones',
         timestamps: false
     }
 )

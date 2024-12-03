@@ -6,9 +6,9 @@ exports.getAsignaturaEstudiante = async (req,resp) =>{
     try {
 
         //select *from estudiante
-        const asignaturaEstudiante = await AsignaturaEstudiante.findAll();
+        const asignaciones = await AsignaturaEstudiante.findAll();
 
-        resp.status(200).send(asignaturaEstudiante)
+        resp.status(200).send(asignaciones)
         
     } catch (error) {
         resp.status(500).send(error)
