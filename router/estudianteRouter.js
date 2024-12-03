@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.get('/',estudianteController.getEstudiante)
 router.post('/',estudianteController.postEstudiante)
-router.put('/:idestudiante',estudianteController.putEstudiante)
-router.delete('/:idestudiante',estudianteController.deleteEstudiante)
+router.put('/:idestudiantes',estudianteController.putEstudiante)
+router.delete('/:idestudiantes',estudianteController.deleteEstudiante)
 
 
 module.exports=router;

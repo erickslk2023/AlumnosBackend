@@ -1,14 +1,13 @@
-const Estudiante= require('../Modelos/Estudiante')
+const Asignatura = require('../Modelos/Asignatura');
+
 
 //request, response
-exports.getEstudiante = async (req,resp) =>{
+exports.getAsignatura = async (req,resp) =>{
 
     try {
+        const asignaturas = await Asignatura.findAll();
 
-        //select *from estudiante
-        const estudiantes = await Estudiante.findAll();
-
-        resp.status(200).send(estudiantes)
+        resp.status(200).send(asignaturas)
         
     } catch (error) {
         resp.status(500).send(error)
@@ -17,11 +16,11 @@ exports.getEstudiante = async (req,resp) =>{
 }
 
 
-exports.postEstudiante = async (req,resp) =>{
+exports.postAsignatura = async (req,resp) =>{
 
     try {
     
-        const result =await Estudiante.create(req.body);
+        const result =await Asignatura.create(req.body);
         resp.json(result)
     
       } catch (error) {
@@ -30,10 +29,10 @@ exports.postEstudiante = async (req,resp) =>{
 
 }
 
-exports.putEstudiante = async (req,resp) =>{
+exports.putAsignatura = async (req,resp) =>{
     try {
     
-        const result =await Estudiante.findByPk(req.params.idestudiantes);
+        const result =await Asignatura.findByPk(req.params.idasignatura);
     
         if(result){
           await result.update(req.body);
@@ -48,11 +47,12 @@ exports.putEstudiante = async (req,resp) =>{
         resp.status(500).json({error: 'Ocurrio un error' + error})
       }
 }
-exports.deleteEstudiante = async (req,resp) =>{
+
+exports.deleteAsignatura = async (req,resp) =>{
 
     try {
     
-        const result =await Estudiante.findByPk(req.params.idestudiantes);
+        const result =await Asignatura.findByPk(req.params.idasignatura);
     
         if(result){
           await result.destroy();

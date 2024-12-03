@@ -1,14 +1,14 @@
-const Estudiante= require('../Modelos/Estudiante')
+const AsignaturaEstudiante= require('../Modelos/AsignaturaEstudiante')
 
 //request, response
-exports.getEstudiante = async (req,resp) =>{
+exports.getAsignaturaEstudiante = async (req,resp) =>{
 
     try {
 
         //select *from estudiante
-        const estudiantes = await Estudiante.findAll();
+        const asignaturaEstudiante = await AsignaturaEstudiante.findAll();
 
-        resp.status(200).send(estudiantes)
+        resp.status(200).send(asignaturaEstudiante)
         
     } catch (error) {
         resp.status(500).send(error)
@@ -17,11 +17,11 @@ exports.getEstudiante = async (req,resp) =>{
 }
 
 
-exports.postEstudiante = async (req,resp) =>{
+exports.postAsignaturaEstudiante = async (req,resp) =>{
 
     try {
     
-        const result =await Estudiante.create(req.body);
+        const result =await AsignaturaEstudiante.create(req.body);
         resp.json(result)
     
       } catch (error) {
@@ -30,10 +30,10 @@ exports.postEstudiante = async (req,resp) =>{
 
 }
 
-exports.putEstudiante = async (req,resp) =>{
+exports.putAsignaturaEstudiante = async (req,resp) =>{
     try {
     
-        const result =await Estudiante.findByPk(req.params.idestudiantes);
+        const result =await AsignaturaEstudiante.findByPk(req.params.id);
     
         if(result){
           await result.update(req.body);
@@ -48,11 +48,11 @@ exports.putEstudiante = async (req,resp) =>{
         resp.status(500).json({error: 'Ocurrio un error' + error})
       }
 }
-exports.deleteEstudiante = async (req,resp) =>{
+exports.deleteAsignaturaEstudiante = async (req,resp) =>{
 
     try {
     
-        const result =await Estudiante.findByPk(req.params.idestudiantes);
+        const result =await AsignaturaEstudiante.findByPk(req.params.id);
     
         if(result){
           await result.destroy();

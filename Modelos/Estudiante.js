@@ -1,5 +1,3 @@
-
-
 const { DataTypes } = require('sequelize')
 const sequelize = require('../bd/database')
 
@@ -28,7 +26,7 @@ const Estudiante = sequelize.define('Estudiante', {
     }
 },
     {
-        tableName: 'Estudiante',
+        tableName: 'estudiantes',
         timestamps: false
     }
 )

@@ -3,7 +3,7 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../bd/database')
 
-const AsignaturaEstudiante = sequelize.define('Estudiante', {
+const AsignaturaEstudiante = sequelize.define('AsignaturaEstudiante', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -19,7 +19,7 @@ const AsignaturaEstudiante = sequelize.define('Estudiante', {
     }
 },
     {
-        tableName: 'Estudiante',
+        tableName: 'asignaturaEstudiante',
         timestamps: false
     }
 )

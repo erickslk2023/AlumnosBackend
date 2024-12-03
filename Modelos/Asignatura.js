@@ -1,4 +1,3 @@
-
 const { DataTypes } = require('sequelize')
 const sequelize = require('../bd/database')
 
@@ -16,10 +15,10 @@ const Asignatura = sequelize.define('Asignatura', {
         type: DataTypes.INTEGER,
         allowNull: false
 
-    },
+    }
 },
 {
-    tableName: 'Asignatura',
+    tableName: 'asignaturas',
     timestamps: false, // Desactiva las columnas createdAt y updatedAt
   }
 

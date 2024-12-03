@@ -1,6 +1,8 @@
 const express = require('express')
-const estudianteRouter = require('./router/estudianteRouter');
-const Estudiante = require('./Modelos/Estudiante');
+const EstudianteRouter = require('./Modelos/Estudiante');
+const AsignaturaRouter =  require('./Modelos/Asignatura');
+const AsignaturaEstudianteRouter =  require('./Modelos/AsignaturaEstudiante');
+
 
 
 const app= express();
@@ -9,7 +11,9 @@ app.use(express.json())
 
 var port = 5000;
 
-app.use('/estudiante',estudianteRouter)
+app.use('/estudiantes',EstudianteRouter)
+app.use('/asignaturas',AsignaturaRouter)
+app.use('/asignaturaEstudiante',AsignaturaEstudianteRouter)
 
 
 //index + controller
