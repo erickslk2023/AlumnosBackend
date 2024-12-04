@@ -32,7 +32,7 @@ exports.postEstudiantes = async (req,resp) =>{
 
 }
 
-exports.postEstudiantes = async (req,resp) =>{
+exports.putEstudiantes = async (req,resp) =>{
     try {
     
         const result =await Estudiantes.findByPk(req.params.idestudiante);

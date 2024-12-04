@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const estudianteRouter = require('./router/estudianteRouter')
 const asignaturaRouter = require('./router/AsignaturaRouter')
 const AsignaturaEstudianteRouter = require('./router/AsignaturaEstudianteRouter')
@@ -8,7 +9,9 @@ const Asignatura = require('./Modelos/Asignatura');
 
 const app= express();
 
+
 app.use(express.json())
+app.use(cors())
 
 var port = 5000;
 
